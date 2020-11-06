@@ -1,6 +1,7 @@
 from random import randrange
 from django.shortcuts import render
 from django.http import HttpResponse
+import os
 import json
 from mnist import MNIST
 
@@ -16,6 +17,6 @@ def getRandomMnistNumber(request):
 
 
 def loadRandomNumber():
-    mnData = MNIST('c:/Users/Majestic/python-mnist/bin/data/')
+    mnData = MNIST(os.getcwd() + '/resources/')
     images, labels = mnData.load_training()
     return images[randrange(len(images))]

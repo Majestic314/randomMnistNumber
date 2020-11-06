@@ -55,8 +55,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'C:/Users/Majestic/Documents/Projects/5/Машинное обучение/lr1withDjango/randomMnistNumber/randomNumberApp/templates',
-            "C:/Users/Majestic/Documents/Projects/5/Машинное обучение/lr1withDjango/randomMnistNumber/front/build/",
+            BASE_DIR + '/randomNumberApp/templates',
+            BASE_DIR + '/front/build/',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -121,10 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATICFILES_DIRS = [
-    "C:/Users/Majestic/Documents/Projects/5/Машинное обучение/lr1withDjango/randomMnistNumber/randomNumberApp/static/",
-    "C:/Users/Majestic/Documents/Projects/5/Машинное обучение/lr1withDjango/randomMnistNumber/front/build/static/",
-    "C:/Users/Majestic/Documents/Projects/5/Машинное обучение/lr1withDjango/randomMnistNumber/front/public/",
+    BASE_DIR + "/randomNumberApp/static/",
+    BASE_DIR + "/front/build/static/",
+    BASE_DIR + "/front/public/",
 ]
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = "C:/Users/Majestic/Documents/Projects/5/Машинное обучение/lr1withDjango/randomMnistNumber/randomNumberApp/static/"
