@@ -4,6 +4,7 @@ from django.http import HttpResponse
 import os
 import json
 from mnist import MNIST
+from django.core.cache import cache
 
 
 def index(request):
@@ -11,12 +12,16 @@ def index(request):
 
 
 def getRandomMnistNumber(request):
-    print(request)
-    result = json.dumps(loadRandomNumber())
+    images = cache.get('images')
+    if images is None:
+        loadImages()
+        images = cache.get('images')
+    randomImage = images[randrange(len(images))]
+    result = json.dumps(randomImage)
     return HttpResponse(result)
 
 
-def loadRandomNumber():
+def loadImages():
     mnData = MNIST(os.getcwd() + '/resources/')
     images, labels = mnData.load_training()
-    return images[randrange(len(images))]
+    cache.set('images', images, 300)
