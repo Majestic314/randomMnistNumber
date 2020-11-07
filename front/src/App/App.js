@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Field from './Field';
+import Field from '../Field/Field';
 import axios from 'axios';
 
 export default class App extends React.PureComponent {
@@ -9,7 +9,7 @@ export default class App extends React.PureComponent {
     super(context, props);
     this.state = {
       isLoading: false,
-      fieldData: null//[[100, 200, 39], [145, 255, 30], [59, 82, 203]]
+      fieldData: null
     };
     this.getNumber = this.getNumber.bind(this);
     this.mapField = this.mapField.bind(this);
@@ -62,21 +62,3 @@ export default class App extends React.PureComponent {
     return resultField;
   }
 }
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );

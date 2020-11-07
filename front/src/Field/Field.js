@@ -1,6 +1,6 @@
 import React from 'react';
 import './Field.css';
-import Cell from './Cell';
+import Cell from '../Cell/Cell';
 
 export default class Field extends React.PureComponent {
 
